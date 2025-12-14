@@ -1,1 +1,22 @@
-Chess (Pygame) is a compact drag-and-drop chess sandbox built with Python and Pygame, featuring pseudo-legal move generation, turn tracking, last-move highlighting, hint dots for available destinations, optional move and capture sounds, and theme-driven colors for fast asset swaps. The code lives in `src/`, with `board.py` managing state and moves, `piece.py` loading sprites from `assets/images/imgs-80px/` or `imgs-128px/` (named `{color}_{piece}.png`), `move.py` and `square.py` defining core structures, `dragger.py` handling mouse interactions, `game.py` orchestrating drawing and sounds, `const.py` sizing the board, `color.py` and `theme.py` setting the palette, `config.py` toggling options, and `sound.py` reading optional `assets/sounds/move.wav` and `capture.wav`. Run `pip install pygame` on Python 3.9+ and start with `python main.py`; drag pieces to move, press `R` to reset, and close the window to quit. If assets are missing, pieces fall back to simple shapes and sounds are skipped. The move rules are intentionally simple—extend them to add check, mate, castling, and en passant.
+# Chess (Pygame)
+Chess (Pygame) is a compact drag-and-drop chess sandbox built with Python and Pygame. It supports pseudo-legal move generation, turn tracking, last-move highlighting, hint dots for available destinations, optional move and capture sounds, and theme-driven colors for fast asset swaps. Assets live under `assets/images/imgs-80px/` (or `imgs-128px/`) and are named `{color}_{piece}.png` (for example, `white_pawn.png`). Sounds are optional (`assets/sounds/move.wav`, `assets/sounds/capture.wav`).
+
+## Structure
+- `main.py` — game entry and event loop
+- `src/board.py` — board state and move generation
+- `src/piece.py` — piece model and sprite loading
+- `src/move.py`, `src/square.py` — move and square helpers
+- `src/dragger.py` — drag-and-drop handling
+- `src/game.py` — rendering, turns, sounds
+- `src/const.py`, `src/color.py`, `src/theme.py`, `src/config.py` — sizes, colors, theme, config
+- `src/sound.py` — optional sounds
+
+## Run
+Python 3.9+ and `pygame` are required.
+
+```bash
+pip install pygame
+python main.py
+```
+
+Controls: drag a piece to move; press `R` to reset; close the window to quit. If assets are missing, pieces fall back to simple shapes and sounds are skipped. Move rules are simplified—extend them to add check, mate, castling, and en passant.
